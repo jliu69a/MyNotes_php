@@ -8,7 +8,7 @@ if ($_POST) {
     $typeId = mysqli_real_escape_string($con, $_POST['typeid']);
     $content = mysqli_real_escape_string($con, $_POST['content']);
     
-    $insertSql = "INSERT INTO `my_notes`(`title`, `type_id`, `update_date`, `content`) VALUES ('$title', 0, now(), '$content');";
+    $insertSql = "INSERT INTO `my_notes`(`title`, `type_id`, `update_date`, `content`) VALUES ('$title', $typeId, now(), '$content');";
     $result1 = mysqli_query($con, $insertSql);
     
     include('my_notes_query.php');
