@@ -7,9 +7,10 @@ if ($_POST) {
     $id = mysqli_real_escape_string($con, $_POST['id']);
     $title = mysqli_real_escape_string($con, $_POST['title']);
     $typeId = mysqli_real_escape_string($con, $_POST['typeid']);
+    $dateTime = mysqli_real_escape_string($con, $_POST['datetime']);
     $content = mysqli_real_escape_string($con, $_POST['content']);
     
-    $insertSql = "UPDATE `my_notes` SET `title` = '$title',`type_id` = $typeId, `update_date` = now(), `content` = '$content' WHERE `id` = $id;";
+    $insertSql = "UPDATE `my_notes` SET `title` = '$title',`type_id` = $typeId, `update_date` = now(), `date_time` = '$dateTime', `content` = '$content' WHERE `id` = $id;";
     $result1 = mysqli_query($con, $insertSql);
     
     include('my_notes_query.php');
